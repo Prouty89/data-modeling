@@ -14,4 +14,9 @@ function logger(req, res, next) {
     next()
 };
 
+server.get('/', (req, res) => {
+    res.status(200).json({ message: "it's alive!" })
+});
+
+
 module.exports = server;
