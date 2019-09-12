@@ -1,10 +1,12 @@
 const express = require('express');
 const helmet = require('helmet');
 const server = express();
+const recipeRouter = require('./router/recipe-router');
 
 server.use(express.json());
 server.use(helmet());
-server.use(logger)
+server.use(logger);
+server.use('/api/recipes', recipeRouter);
 
 function logger(req, res, next) {
     const method = req.method;
